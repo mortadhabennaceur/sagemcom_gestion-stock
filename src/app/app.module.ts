@@ -21,7 +21,8 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
 import { UpdateProductComponent } from './pages/update-product/update-product.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { MatTableModule } from '@angular/material/table';
-import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule if needed
+import { MatIconModule } from '@angular/material/icon';
+import { ProducthistoryComponent } from './pages/producthistory/producthistory.component'; // Import MatIconModule if needed
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule 
     SidebarComponent,
     AddProductComponent,
     UpdateProductComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProducthistoryComponent
   ],
   imports: [
     BrowserModule,

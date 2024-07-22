@@ -15,6 +15,10 @@ export class ProductService {
     return this.http.get<any[]>(`${this.baseUrl}/getallproducts`);
   }
 
+  getProductshistory(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/getallproductshistory`);
+  }
+
   addProduct(product: any): Observable<any> {
     const user = this.userService.getUserData();
     return this.userService.getUserIdByMatricule(user.matricule).pipe(

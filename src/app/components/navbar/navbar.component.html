@@ -1,29 +1,25 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">Gestion Stock</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         <!-- Conditionally show register link if user is admin -->
-         <li *ngIf="isAdmin" class="nav-item">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+      <!-- Conditionally show register link if user is admin -->
+      <ul class="navbar-nav ms-auto">
+        <li *ngIf="isAdmin" class="nav-item">
           <a class="nav-link" routerLink="/register">Register</a>
         </li>
-      </ul>>
-      
+      </ul>
       <!-- Display user info if user is logged in -->
-      <div *ngIf="user" class="navbar-text">
+      <div *ngIf="user" class="navbar-text ms-2">
         <span class="me-2">{{ user.prenom }} {{ user.nom }}</span>
         <span class="badge bg-primary">{{ user.matricule }}</span>
         <span class="badge bg-info">{{ user.role }}</span>
       </div>
-        <!-- Logout button -->
-        <button class="btn btn-outline-light ms-2" (click)="logout()">Logout</button>
-      
-      
-      <!-- Add login/register links or other actions if needed -->
+      <!-- Logout button -->
+      <button class="btn btn-outline-light ms-2" (click)="logout()">Logout</button>
     </div>
   </div>
 </nav>
