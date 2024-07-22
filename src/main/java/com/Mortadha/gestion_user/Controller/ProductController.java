@@ -1,6 +1,7 @@
 package com.Mortadha.gestion_user.Controller;
 
 import com.Mortadha.gestion_user.Entity.Product;
+import com.Mortadha.gestion_user.Entity.ProductHistory;
 import com.Mortadha.gestion_user.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,11 @@ public class ProductController {
     @GetMapping(path = "/getallproducts")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
+    }
+
+    @GetMapping(path = "/getallproductshistory")
+    public List<ProductHistory> getAllProductsHistory() {
+        return productService.getAllProductsHistory();
     }
 
     @GetMapping("/getproduct/{id}")

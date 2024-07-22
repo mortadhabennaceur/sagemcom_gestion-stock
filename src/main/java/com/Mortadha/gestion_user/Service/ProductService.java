@@ -27,6 +27,10 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    public List<ProductHistory> getAllProductsHistory() {
+        return productHistoryRepository.findAll();
+    }
+
     public Product getProductById(Long id) {
         return productRepository.findById(id).orElse(null);
     }
