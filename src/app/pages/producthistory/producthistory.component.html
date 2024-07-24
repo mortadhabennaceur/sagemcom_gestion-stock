@@ -1,0 +1,43 @@
+<app-navbar [user]="currentUser"></app-navbar>
+
+<div class="main-container">
+  <app-sidebar></app-sidebar> <!-- Add the sidebar component here -->
+
+  <div class="content-area container mt-5">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Product History</h2>
+      </div>
+      <div class="card-body">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        
+        <div *ngIf="productshistory.length > 0">
+          <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Operation</th>
+                <th scope="col">Operation Time</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Matricule</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let history of productshistory">
+                <td>{{ history.operation }}</td>
+                <td>{{ history.operationTime | date: 'short' }}</td>
+                <td>{{ history.productName }}</td>
+                <td>{{ history.userMatricule }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div *ngIf="productshistory.length === 0" class="alert alert-info">
+          No product history available.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

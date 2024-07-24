@@ -1,0 +1,27 @@
+<div class="login-container">
+  <div class="login-header">
+    <img src="assets/sagemcom-logo.png" alt="Sagemcom Logo" class="logo">
+    <h1 class="sagemcom-title">Sagemcom</h1>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Matricule</mat-label>
+          <input matInput formControlName="matricule">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+        <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
