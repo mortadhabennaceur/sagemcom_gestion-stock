@@ -1,0 +1,53 @@
+<!-- Include the NavbarComponent -->
+<app-navbar [user]="currentUser"></app-navbar>
+
+<!-- Main content area -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-2">
+      <app-sidebar></app-sidebar>
+    </div>
+    
+    <!-- Registration Form -->
+    <div class="col">
+      <div class="register-container">
+        <h2>Register</h2>
+        <!-- Display alerts for success or failure -->
+        <div *ngIf="successMessage" class="alert alert-success" role="alert">
+          {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </div>
+        
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div class="form-group">
+            <label>Nom</label>
+            <input class="form-control" formControlName="nom">
+          </div>
+          <div class="form-group">
+            <label>Prenom</label>
+            <input class="form-control" formControlName="prenom">
+          </div>
+          <div class="form-group">
+            <label>Role</label>
+            <select class="form-control" formControlName="role">
+              <option value="admin">Admin</option>
+              <option value="employee">Employee</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Matricule</label>
+            <input class="form-control" formControlName="matricule">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" formControlName="password">
+          </div>
+          <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
