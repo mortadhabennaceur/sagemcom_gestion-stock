@@ -23,7 +23,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { ProducthistoryComponent } from './pages/producthistory/producthistory.component'; // Import MatIconModule if needed
-
+import { ZXingScannerModule } from '@zxing/ngx-scanner'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +52,7 @@ import { ProducthistoryComponent } from './pages/producthistory/producthistory.c
     MatCardModule,
     MatTableModule, // Import MatTableModule
     MatIconModule // Import MatIconModule if needed
+    ZXingScannerModule // Add the ZXingScannerModule here
   ],
   providers: [
     UserService,
