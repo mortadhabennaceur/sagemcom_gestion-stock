@@ -1,0 +1,30 @@
+.main-container {
+    display: flex;
+  }
+  
+  .content-area {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 900px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    text-align: center;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .alert {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
