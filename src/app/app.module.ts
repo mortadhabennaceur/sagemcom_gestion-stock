@@ -23,7 +23,8 @@ import { ProductsComponent } from './pages/products/products.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { ProducthistoryComponent } from './pages/producthistory/producthistory.component'; // Import MatIconModule if needed
-import { ZXingScannerModule } from '@zxing/ngx-scanner'; 
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     AddProductComponent,
     UpdateProductComponent,
     ProductsComponent,
-    ProducthistoryComponent
+    ProducthistoryComponent,
+    QrScannerComponent
   ],
   imports: [
     BrowserModule,
