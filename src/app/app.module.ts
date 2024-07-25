@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http'; // Correct import
@@ -22,7 +22,9 @@ import { UpdateProductComponent } from './pages/update-product/update-product.co
 import { ProductsComponent } from './pages/products/products.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
-import { ProducthistoryComponent } from './pages/producthistory/producthistory.component'; // Import MatIconModule if needed
+import { ProducthistoryComponent } from './pages/producthistory/producthistory.component';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component'; // Import MatIconModule if needed
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ProducthistoryComponent } from './pages/producthistory/producthistory.c
     AddProductComponent,
     UpdateProductComponent,
     ProductsComponent,
-    ProducthistoryComponent
+    ProducthistoryComponent,
+    QrScannerComponent
   ],
   imports: [
     BrowserModule,
@@ -51,8 +54,11 @@ import { ProducthistoryComponent } from './pages/producthistory/producthistory.c
     MatSnackBarModule,
     MatCardModule,
     MatTableModule, // Import MatTableModule
-    MatIconModule // Import MatIconModule if needed
+    MatIconModule, // Import MatIconModule if needed
+    ZXingScannerModule // Add the ZXingScannerModule here
   ],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line
   providers: [
     UserService,
     provideHttpClient(withFetch()) // Configure HttpClient with withFetch()

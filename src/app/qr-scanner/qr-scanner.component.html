@@ -1,0 +1,9 @@
+<div class="qr-scanner">
+    <zxing-scanner 
+      [formats]="allowedFormats"
+      [device]="scannerEnabled ? selectedDevice : undefined"
+      (scanSuccess)="onCodeResult($event)">
+    </zxing-scanner>
+    <p *ngIf="result">Code QR scanné : {{ result }}</p>
+  </div>
+  
