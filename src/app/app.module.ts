@@ -25,6 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProducthistoryComponent } from './pages/producthistory/producthistory.component';
 import { QrScannerComponent } from './qr-scanner/qr-scanner.component'; // Import MatIconModule if needed
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { BaseChartDirective  } from 'ng2-charts'; // Import NgChartsModule
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     UpdateProductComponent,
     ProductsComponent,
     ProducthistoryComponent,
-    QrScannerComponent
+    QrScannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,9 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     MatCardModule,
     MatTableModule, // Import MatTableModule
     MatIconModule, // Import MatIconModule if needed
-    ZXingScannerModule // Add the ZXingScannerModule here
+    ZXingScannerModule, // Add the ZXingScannerModule here
+    BaseChartDirective,
+    NgxChartsModule
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line

@@ -14,11 +14,21 @@
       <div class="static-content">
         <h1>Bienvenue sur notre application de gestion de stock</h1>
         <p>Voici des informations statiques que nous avons ajoutées.</p>
-        <img src="assets/static-image.jpg" alt="Image Statique">
-      </div>
 
-      <!-- QR Code Scanner Component -->
-      <app-qr-scanner></app-qr-scanner>
+        <!-- Statistics -->
+        <div class="statistics">
+          <h2>Statistiques</h2>
+          <p>Nombre total de produits: {{ productCount }}</p>
+          <p>Quantité totale de tous les produits: {{ totalQuantity }}</p>
+          <h3>Activité des utilisateurs</h3>
+          <div *ngFor="let user of userActivity | keyvalue">
+            <p>{{ user.key }}:</p>
+            <ul>
+              <li *ngFor="let operation of user.value | keyvalue">{{ operation.key }}: {{ operation.value }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
